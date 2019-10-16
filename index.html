@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Trivia Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <script src="assets/javascript/game.js"></script>
+
+    <style>
+        .hide {
+            display: none;
+        }
+
+
+
+        .start-btn {
+            align-items: center;
+            padding: 10px 20px;
+            justify-content: center;
+            font-size: 1.5rem;
+            display: flex;
+            font-weight: bold;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <button id="start-btn" class="startbt">Start</button>
+
+
+
+    <div class="container">
+        <div id="question-container" class="hide">
+
+            <form>
+                <p> what is the name of dog?</p>
+                <input type="radio" name="question1" value="choice1"> Male<br>
+                <input type="radio" name="question1" value="choice2"> Female<br>
+                <input type="radio" name="question1" value="choice3"> Other
+                <br>
+                <form>
+                    <p> what is the name of dog?</p>
+                    <input type="radio" name="question1" value="choice1"> Male<br>
+                    <input type="radio" name="question1" value="choice2"> Female<br>
+                    <input type="radio" name="question1" value="choice3"> Other
+
+                </form>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        const StartButton = document.getElementById('start-btn')
+        const QuestionContainer = document.getElementById('question-container')
+
+        StartButton.addEventListener('click', StartGame)
+
+        function StartGame() {
+
+            StartButton.classList.add('hide')
+            QuestionContainer.classList.remove('hide')
+
+        }
+
+
+
+
+    </script>
