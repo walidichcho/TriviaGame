@@ -9,79 +9,80 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
+    <script src="assets/javascript/app.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <script src="assets/javascript/game.js"></script>
-
-    <style>
-        .hide {
-            display: none;
-        }
-
-
-
-        .start-btn {
-            align-items: center;
-            padding: 10px 20px;
-            justify-content: center;
-            font-size: 1.5rem;
-            display: flex;
-            font-weight: bold;
-
-
-        }
-    </style>
-
 </head>
+<!-- need to have start button ane done button.
+when we click the start button,the html file that has all question will show and the start button will be hidden.
+when we click done button, the question container will be hidden and the messages (correct and uncorrect answers) will show.
+the time will start when i click start button.
+if the time is up a message will display (sorry no more time)and get the result.
+put all if statment for correct answers, uncorrect answer and messages in one function after you click done. -->
 
 <body>
 
+    <!-- html elemnt for the body. -->
+
+    <h1 id="title">Totaly Trivial Trivia</h1><br>
+
+    <button type="button" id="start-btn">Start</button>
 
 
-    <button id="start-btn" class="startbt">Start</button>
-
-
+    <!-- //main container that hold all question, I chose redio. -->
 
     <div class="container">
         <div id="question-container" class="hide">
+            <h2 id="time001">20</h2>
+            <br>
 
-            <form>
-                <p> what is the name of dog?</p>
-                <input type="radio" name="question1" value="choice1"> Male<br>
-                <input type="radio" name="question1" value="choice2"> Female<br>
-                <input type="radio" name="question1" value="choice3"> Other
-                <br>
-                <form>
-                    <p> what is the name of dog?</p>
-                    <input type="radio" name="question1" value="choice1"> Male<br>
-                    <input type="radio" name="question1" value="choice2"> Female<br>
-                    <input type="radio" name="question1" value="choice3"> Other
+            <form id="quiz" name="quiz">
 
-                </form>
+                <p> What is the Capital of South Carolina?</p>
+                <input type="radio" id="mc" name="question1" value="Colombia"> Colombia<br>
+                <input type="radio" id="mc" name="question1" value="Charleston"> Charleston<br>
+                <input type="radio" id="mc" name="question1" value="Mount Pleasant"> Mount Pleasant<br>
+
+                <p> What is the Capital of Utah?</p>
+                <input type="radio" id="mc" name="question2" value="Danver"> Danver<br>
+                <input type="radio" id="mc" name="question2" value="Salt Lake City"> Salt Lake City<br>
+                <input type="radio" id="mc" name="question2" value="Provo"> Provo<br>
+
+                <p> What is the Capital of Kentucky?</p>
+                <input type="radio" id="mc" name="question3" value="Frankfort"> Frankfort<br>
+                <input type="radio" id="mc" name="question3" value="Louisville"> Louisville<br>
+                <input type="radio" id="mc" name="question3" value="Knoxville"> Knoxville<br>
+
+                <p> What is the Capital of Nevada?</p>
+                <input type="radio" id="mc" name="question4" value="Carson City"> Carson City<br>
+                <input type="radio" id="mc" name="question4" value="Las Vegas"> Las Vegas<br>
+                <input type="radio" id="mc" name="question4" value="Yuma"> Yuma<br>
+
+                <p> What is the Capital of Arkansas?</p>
+                <input type="radio" id="mc" name="question5" value="Little Rock"> Little Rock<br>
+                <input type="radio" id="mc" name="question5" value="Denver"> Denver<br>
+                <input type="radio" id="mc" name="question5" value="Albany"> Albany<br>
+
+
+
+
+                <button type="button" id="done-btn">Done</button>
+
 
             </form>
-
         </div>
+    </div>
+    <!-- create a Div to hold all messages after we click in submit button -->
+
+    <div id="aftersubmit">
+        <h3> All done here`s how you did.</h3>
+        <p id="totalcorrect"></p>
+        <p id="totalincorrect"></p>
+
+        <p id="message"></p>
 
     </div>
 
-    <script>
 
-        const StartButton = document.getElementById('start-btn')
-        const QuestionContainer = document.getElementById('question-container')
+</body>
 
-        StartButton.addEventListener('click', StartGame)
-
-        function StartGame() {
-
-            StartButton.classList.add('hide')
-            QuestionContainer.classList.remove('hide')
-
-        }
-
-
-
-
-    </script>
+</html>
